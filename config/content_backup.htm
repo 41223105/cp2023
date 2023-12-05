@@ -1,7 +1,15 @@
 <h1>About</h1>
 <p><a href="https://github.com/mdecycu/cmsite"> https://github.com/mdecycu/cmsite</a></p>
+<h1>W5</h1>
+<p>// 包含標準輸出入程式庫的標頭文件<br/>// https://blog.csdn.net/weixin_38468077/article/details/101069365<br/>// http://www.gnuplot.info/demo/<br/>// https://github.com/sysprog21/rv32emu<br/>// https://github.com/sysprog21/semu <br/>// https://docs.google.com/presentation/d/14N0cWG2SnBSqhc2cLF0_2VerB9FF8JN3<br/>// https://cs61c.org/fa23/<br/>// https://greenteapress.com/wp/think-python-2e/<br/>// https://github.com/ecalvadi/c99-examples<br/>// https://github.com/gouravthakur39/beginners-C-program-examples<br/>// https://github.com/ergenekonyigit/Numerical-Analysis-Examples<br/>// https://www.che.ncku.edu.tw/facultyweb/changct/html/teaching/CPPandMATLAB/Past/pdf%20Files/Chap02-Ling.pdf<br/>// https://gteceducation.com.sg/Brochures/PROGRAMMING/C%20PROGRAMMING%20FULL.pdf<br/>// https://jsommers.github.io/cbook/cbook.pdf<br/>// https://jsommers.github.io/cbook/index.html<br/>// http://student.itee.uq.edu.au/courses/csse2310/CProgrammingNotes.pdf<br/>// http://cslibrary.stanford.edu/101/EssentialC.pdf<br/>// https://publications.gbdirect.co.uk/c_book/<br/>// https://www.fossil-scm.org/fossil-book/doc/2ndEdition/fossilbook.pdf<br/>// ***** execute on replit <br/>// cd downloads<br/>// cc gnuplot_ex1.c -o gnuplot_ex1<br/>// ./gnuplot_ex1<br/>#include &lt;stdio.h&gt;</p>
+<p>// 主函式<br/>int main() {<br/> // Start a Gnuplot process using popen<br/> FILE *gnuplotPipe = popen("gnuplot -persistent", "w");<br/> if (!gnuplotPipe) {<br/> fprintf(stderr, "Failed to start Gnuplot.\n");<br/> return 1;<br/> }</p>
+<p>// Use Gnuplot plotting commands, specify font and output as PNG<br/> fprintf(gnuplotPipe, "set terminal png font 'default,10' size 800,400\n");<br/> fprintf(gnuplotPipe, "set output './../images/gnuplot_ex1.png'\n");<br/> fprintf(gnuplotPipe, "plot sin(x)");<br/> // Close popen<br/> pclose(gnuplotPipe);</p>
+<p>return 0;<br/>}</p>
+<p></p><h1>W6</h1>
+<p></p>
 <h1>W13</h1>
-<p>在上計算中我所遇到的困境應該與班上的各位一致，也就是根本聽不懂老師您口中說的任何一個專有名詞，例如:倉儲、KEY.....之類的，在第一次接觸沒有基礎的情況下，老師可能覺得我們應該要知道，沒有做太多的解釋，就讓我們自行操作，大家都很不知所措的到處問可能有一點基礎的人，老師很積極的想讓我們知道這堂課要做甚麼這堂課在教什麼，但很多時候我們還是聽不懂老師上課的內容，即使您說的是中文也錄影給我們看了。</p><h1>Brython</h1>
+<p>在上計算中我所遇到的困境應該與班上的各位一致，也就是根本聽不懂老師您口中說的任何一個專有名詞，例如:倉儲、KEY.....之類的，在第一次接觸沒有基礎的情況下，老師可能覺得我們應該要知道，沒有做太多的解釋，就讓我們自行操作，大家都很不知所措的到處問可能有一點基礎的人，老師很積極的想讓我們知道這堂課要做甚麼這堂課在教什麼，即使您說的是中文也錄影給我們看了，但很多時候我們還是聽不懂老師上課的內容。</p>
+<h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
