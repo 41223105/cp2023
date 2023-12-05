@@ -1,4 +1,4 @@
-// https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China
+//https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China
 // 內政部國旗參考資料: https://www.moi.gov.tw/cp.aspx?n=10621
 // cc roc_flag_in_gd.c -lgd -lm to link with gd and math library
 // https://www.rapidtables.com/web/color/RGB_Color.html
