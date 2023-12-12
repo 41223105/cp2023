@@ -15,7 +15,7 @@
 <p>(上圖顯示共有三名用戶針對 mdecp2023 帳號下的 Github Classroom 倉儲提出 Replit 連線要求, 其中只有最上方用戶的 request 取得 mdecp2023/site-scrum-1 倉儲的維護權限, 其餘兩則 requests 則仍處於待審核階段. 意即若要讓各用戶整合 Replit,<span> </span><span style="background-color: #ffff00;">每一個 Github Classroom 作業, 管理者都必須手動處理超過兩百則的 requests</span>)</p>
 <p>為去除管理者的手動設定負擔, 決定 2023 cp 與 cad 等課程將放棄使用 Github Classroom. 改為由各學員自行針對課程建立用來評分的課程倉儲與網站 (cp 課程建立 cp2023 倉儲, cad 課程則建立 cad2023 倉儲), 直接附屬在學員的 Github 帳號下, 後續的 submodule 設定與倉儲協同權限則統一由各學員自行負責.</p>
 <h1>W4</h1>
-<p><span>由學員自行利用 <a href="https://github.com/mdecycu/cmsite">https://github.com/mdecycu/cmsite</a> 倉儲作為 template, 建立名稱為 cp2023 的評分倉儲</span>.</p>
+<p><span>自行利用 <a href="https://github.com/mdecycu/cmsite">https://github.com/mdecycu/cmsite</a> 倉儲作為 template, 建立名稱為 cp2023 的評分倉儲</span>.</p>
 <p>近端執行:</p>
 <p>SciTE 與 Tiny C Compiler 若要設定為 Tools - Compile 之後產生可執行檔案 a.out, cpp.properties 設定檔案必須修改如下:</p>
 <p></p>
@@ -36,8 +36,7 @@ command.clean.*.h=$(make.command) clean
 #command.go.*.c=./$(FileName)
 command.go.*.c=$(cc) $(FileNameExt)</pre>
 <p>雲端執行:</p>
-<p>範例:<span> </span><a href="https://replit.com/@wcms/cjavascriptpython">https://replit.com/@wcms/cjavascriptpython</a></p>
-<p>將位於個人 Github 帳號下的 cp2023 倉儲 (建議以<span> </span><a href="https://github.com/mdecycu/cmsite">https://github.com/mdecycu/cmsite</a><span> </span>作為 template) import 進入 Replit, 以 git submodule update --init 取下子模組, 然後以 pip install flask flask_cors bs4 lxml pelican markdown gevent 安裝啟動編輯網站所需模組後, 將 config/config 密碼編碼移至 Secrets 頁面中的 config 變數後啟動.</p>
+<p>將位於個人 Github 帳號下的 cp2023 倉儲import 進入 Replit, 以 git submodule update --init 取下子模組, 然後以 pip install flask flask_cors bs4 lxml pelican markdown gevent 安裝啟動編輯網站所需模組後, 將 config/config 密碼編碼移至 Secrets 頁面中的 config 變數後啟動.</p>
 <p>修改 replit.nix 如下, 表示要安裝 gnuplot 套件:</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
   deps = [
@@ -81,8 +80,7 @@ printf("You entered %d\n", this_is_a_number2);
 total = this_is_a_number1 + this_is_a_number2;/* add two numbers */
 printf("total is %d\n", total);
 return 0;
-}</pre>
-<h1>W5</h1>
+}</pre><h1>W5</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China
 // 內政部國旗參考資料: https://www.moi.gov.tw/cp.aspx?n=10621
 // cc roc_flag_in_gd.c -lgd -lm to link with gd and math library
