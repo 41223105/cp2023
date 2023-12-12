@@ -4,7 +4,7 @@
   // https://www.rapidtables.com/web/color/RGB_Color.html
   // 幾何形狀著色與繪圖練習
   // 以下 gd 繪圖程式嘗試畫出 ROC 國旗, 請根據下列程式內容完成後續的國旗繪圖
-  #include <stdio.h>
+  #include <stdio.h> 
   #include <gd.h>
   #include <math.h>
 
