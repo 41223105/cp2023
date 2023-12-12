@@ -143,6 +143,73 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">W3 << <a href='W3.html'>Previous</a> <a href='W5.html'>Next</a> >> W5<br /><h1>W4</h1>
+<p><span>由學員自行利用 <a href="https://github.com/mdecycu/cmsite">https://github.com/mdecycu/cmsite</a> 倉儲作為 template, 建立名稱為 cp2023 的評分倉儲</span>.</p>
+<p>近端執行:</p>
+<p>SciTE 與 Tiny C Compiler 若要設定為 Tools - Compile 之後產生可執行檔案 a.out, cpp.properties 設定檔案必須修改如下:</p>
+<p></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">ccopts=-pedantic -Os
+#cc=g++ $(ccopts) -c $(FileNameExt) -o $(FileName).o
+#ccc=gcc $(ccopts) -c $(FileNameExt) -o $(FileName).o
+cc=tcc.exe -run 
+ccc=tcc.exe -o a.out
+ 
+make.command=make
+#command.compile.*.c=$(ccc) -std=c99
+command.compile.*.c=$(ccc) $(FileNameExt)
+command.build.*.c=$(make.command)
+command.build.*.h=$(make.command)
+command.clean.*.c=$(make.command) clean
+command.clean.*.h=$(make.command) clean
+# use tcc to run .c program
+#command.go.*.c=./$(FileName)
+command.go.*.c=$(cc) $(FileNameExt)</pre>
+<p>雲端執行:</p>
+<p>範例:<span> </span><a href="https://replit.com/@wcms/cjavascriptpython">https://replit.com/@wcms/cjavascriptpython</a></p>
+<p>將位於個人 Github 帳號下的 cp2023 倉儲 (建議以<span> </span><a href="https://github.com/mdecycu/cmsite">https://github.com/mdecycu/cmsite</a><span> </span>作為 template) import 進入 Replit, 以 git submodule update --init 取下子模組, 然後以 pip install flask flask_cors bs4 lxml pelican markdown gevent 安裝啟動編輯網站所需模組後, 將 config/config 密碼編碼移至 Secrets 頁面中的 config 變數後啟動.</p>
+<p>修改 replit.nix 如下, 表示要安裝 gnuplot 套件:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
+  deps = [
+    pkgs.gnuplot
+  ];
+}</pre>
+<p><span>之後將所練習的 C 程式置於 downloads 目錄中, 其執行影像結果存入 images 後, 分別在網頁中引用.</span></p>
+<p>Exercises:</p>
+<p>請從 <a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a><span> </span>(需要下載密碼)與 <a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-5064-8_1.pdf?pdf=inline%20link">Introduction to C</a> (經由校園網路或 VPN 下載)電子書中各擷取 10 個 C 程式範例, 分別:</p>
+<ol>
+<li>在可攜程式環境中以 SciTE + Tiny C Compiler 編譯系統, 使用 Tools - Go 類編譯方式執行.</li>
+<li>在可攜程式環境中以 SciTE + Tiny C Compiler 編譯系統, 使用 Tools - Compile 編譯連結後取得 a.out, 然後在命令列中以 a.out 執行.</li>
+<li>在 Replit 全球資訊網 IDE 環境中的 Shell 頁面, 以 cc ex1.c 產生可執行檔案 a.out, 並以 ./a.out 執行, 或者以 cc ex1.c -o ex1 指定編譯連結後的可執行檔案名稱為 ex1 後, 以 ./ex1 執行.</li>
+</ol>
+<p>最後將所選擇的 C 程式範例執行過程與相關說明內容, 整理在<span>個人 github 帳號下的 cp2023 倉儲網頁</span>中的 c_ex 頁面中.</p>
+<p>參考:</p>
+<p>Introduction to the C programming Language (<a href="https://inst.eecs.berkeley.edu/~cs61c/su21/pdfs/lectures/fa20-trimmed/lec03.pdf">1</a>,<span> </span><a href="https://inst.eecs.berkeley.edu/~cs61c/su21/pdfs/lectures/fa20-trimmed/lec04.pdf">2</a>,<span> </span><a href="https://inst.eecs.berkeley.edu/~cs61c/su21/pdfs/lectures/fa20-trimmed/lec05.pdf">3</a>, or<span> </span><a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/ET9_kFFrXg1DslVFqcV9hRABUcxDKnKsdnPyB6nsQFQKdQ?e=k6DGWl">download with password</a>)</p>
+<p>使用者輸入兩個整數後相加的 C 程式範例:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">/* Read in two integers , add them and display the answer */
+#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+int main()
+{
+int this_is_a_number1, this_is_a_number2, total;
+printf("Please enter an integer number:\n ");
+/* read number in */
+if (scanf("%d", &amp;this_is_a_number1) == 1) {
+      printf("%d", this_is_a_number1);
+    } else {
+        printf("Failed to read integer.\n");
+    }
+ 
+printf("You entered %d\n", this_is_a_number1);
+printf("Please enter another number: \n");
+if (scanf("%d", &amp;this_is_a_number2) == 1) {
+      printf("%d", this_is_a_number1);
+    } else {
+      printf("Failed to read integer.\n");
+    }
+printf("You entered %d\n", this_is_a_number2);
+total = this_is_a_number1 + this_is_a_number2;/* add two numbers */
+printf("total is %d\n", total);
+return 0;
+}</pre>
 <br />W3 << <a href='W3.html'>Previous</a> <a href='W5.html'>Next</a> >> W5</div>
         
     <!-- footer -->
