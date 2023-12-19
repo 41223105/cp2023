@@ -266,7 +266,19 @@ img.add_border {
       }
   }</pre>
 <p><img alt="" height="267" src="./../images/roc_flag_in_gd.png" width="400"/></p>
-<br />W5 << <a href='W5.html'>Previous</a> <a href='W13.html'>Next</a> >> W13</div>
+<p>#include &lt;stdio.h&gt;<br/>#include &lt;gd.h&gt;<br/>#include &lt;math.h&gt;</p>
+<p>void draw_japan_flag(gdImagePtr img);<br/>void draw_red_sun(gdImagePtr img, int x, int y, int size, int color);</p>
+<p>int main() {<br/> int originalWidth = 1200;<br/> int originalHeight = (int)(originalWidth * 2.0 / 3.0);<br/> gdImagePtr img = gdImageCreateTrueColor(originalWidth, originalHeight);<br/> gdImageAlphaBlending(img, 0);</p>
+<p>draw_japan_flag(img);</p>
+<p>// 新的宽度和高度以适应 "images" 文件夹<br/> int newWidth = 600;<br/> int newHeight = (int)(newWidth * 2.0 / 3.0);</p>
+<p>// 创建新图像并进行缩放<br/> gdImagePtr resizedImage = gdImageCreateTrueColor(newWidth, newHeight);<br/> gdImageAlphaBlending(resizedImage, 0);<br/> gdImageCopyResampled(resizedImage, img, 0, 0, 0, 0, newWidth, newHeight, originalWidth, originalHeight);</p>
+<p>FILE *outputFile = fopen("./../images/japan_flag.png", "wb");<br/> if (outputFile == NULL) {<br/> fprintf(stderr, "Error opening the output file.\n");<br/> return 1;<br/> }<br/> gdImagePng(resizedImage, outputFile);<br/> fclose(outputFile);<br/> gdImageDestroy(img);<br/> gdImageDestroy(resizedImage);</p>
+<p>return 0;<br/>}</p>
+<p>void draw_japan_flag(gdImagePtr img) {<br/> int width = gdImageSX(img);<br/> int height = gdImageSY(img);</p>
+<p>// 创建一个白色背景<br/> int white = gdImageColorAllocate(img, 255, 255, 255);<br/> gdImageFilledRectangle(img, 0, 0, width - 1, height - 1, white);</p>
+<p>// 绘制红色圆圈（太阳）<br/> int red = gdImageColorAllocate(img, 255, 0, 0);<br/> int center_x = width / 2;<br/> int center_y = height / 2;<br/> int radius = (int)((width * 2) / 3);<br/> draw_red_sun(img, center_x, center_y, radius, red);<br/>}</p>
+<p>void draw_red_sun(gdImagePtr img, int x, int y, int size, int color) {<br/> // 減小 size 的值,例如將他的值減半<br/> size = size / 2;<br/> gdImageArc(img, x, y, size, size, 0, 360, color);<br/> gdImageFillToBorder(img, x, y, color, color);<br/>}</p>
+<p><img caption="false" height="266" src="./../images/japan_flag.png" width="400"/></p><br />W5 << <a href='W5.html'>Previous</a> <a href='W13.html'>Next</a> >> W13</div>
         
     <!-- footer -->
       <div class="container">
