@@ -589,8 +589,24 @@ gdImageFilledRectangle(img, 0, center_y + 1.5 * cross_arm_width, width, center_y
 <p>FList: file list, 列出位於 downloads 目錄下的檔案</p>
 <p>Logout: 登出</p>
 <p>Convert: 將 config/content.htm 經過分頁程式處理後, 轉為 content 目錄下的超文件</p>
+<h1>W10</h1>
+<p>快速設定電腦輔助設計室中的網路 - 採 IPv6 網路設定.</p>
+<p>請檢查隨身碟中的網路設定程式, 確認帶有可攜程式環境以及網路設定相關檔案.</p>
+<p>目的是能夠在啟動隨身系統之後, 可以透過 rsa private key 以 SSH 取下個人倉儲, 並能啟動編輯後轉檔, 擁有推送回 github 的權限.</p>
+<p>各組組長能夠在取下分組倉儲後, 以個人 IPv6 位址啟動後, 允許分組組員登入修改網頁內容, 並透過組長的 rsa private key 推送回 github.</p>
+<p>個人與分組組員能在近端編寫 C 程式, 完成編譯連結後將程式碼與結果放入網頁, 並編寫相關心得報告.</p>
+<p>以上近端操作流程, 也可以在 s1511 與 Replit 伺服器上進行個人與分組倉儲及網頁的改版.</p>
+<p><a href="https://mde.tw/cpnote/downloads/w11_1a.7z">w11_1a.7z</a> (第十一週 1a 上課時建立的共用網路設定檔案)</p>
+<p><span>wink_ffmpeg.reg 設定檔案內容:</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">Windows Registry Editor Version 5.00
+  
+[HKEY_CURRENT_USER\SOFTWARE\Debugmode]
+  
+[HKEY_CURRENT_USER\SOFTWARE\Debugmode\Wink\Settings]
+"FfmpegPath"="y:\\ffmpeg.exe"</pre>
+<p><a href="https://mde.tw/cadnote/downloads/2a_w10_start_ipv6_wink_reg.7z">2a_w10_start_ipv6_wink_reg.7z</a> (可以將此 <span>wink 登錄設定檔</span>, 連同<span>網路設定</span>, <span>Zoomit 啟動</span>與 <span>putty setting</span> 設定, 以 <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-import">reg import</a> 指令整合至 tinyc 可攜程式系統的 start_ipv6.bat 中).</p>
+<p><img alt="" height="284" src="/images/截圖 2023-12-31 下午5.12.26.png" width="400"/></p>
 <h1>W11</h1>
-<div class="line number1 index0 alt2"><code class="html plain"></code></div>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
 #include &lt;stdio.h&gt;
   
@@ -644,8 +660,9 @@ int main() {
   
     return 0;
 }</pre>
-<br/><br/><br/><img alt="" height="200" src="/images/motion_plot.png" width="400"/><br/>W13
-<p>在上這堂課前，有稍微聽認識的學姊講嚴家明老師的課不好過，上兩次課就發現，要登入很多程式，我甚至每次都忘記密碼，改了好幾次，光登入都有問題了，一開始就挫折感滿滿。在上計算中我所遇到的困境應該與班上的各位一致，也就是根本聽不懂老師您口中說的任何一個專有名詞，例如:倉儲、KEY.....之類的，在第一次接觸沒有基礎的情況下，老師可能覺得我們應該要知道，沒有做太多的解釋，就讓我們自行操作，大家都很不知所措的到處問可能有一點基礎的人，老師很積極的想讓我們知道這堂課要做甚麼這堂課在教什麼，即使您說的是中文也錄影給我們看了，但很多時候我們還是聽不懂老師上課的內容。但後來老師也放慢腳步讓我們更好的學習更好的知道這堂課在教什麼，希望以後可以在這堂課聽得懂老師所教的內容。</p><h1>Brython</h1>
+<p><br/><br/><br/><img alt="" height="200" src="/images/motion_plot.png" width="400"/><br/>W13</p>
+<p>在上這堂課前，有稍微聽認識的學姊講嚴家明老師的課不好過，上兩次課就發現，要登入很多程式，我甚至每次都忘記密碼，改了好幾次，光登入都有問題了，一開始就挫折感滿滿。在上計算中我所遇到的困境應該與班上的各位一致，也就是根本聽不懂老師您口中說的任何一個專有名詞，例如:倉儲、KEY.....之類的，在第一次接觸沒有基礎的情況下，老師可能覺得我們應該要知道，沒有做太多的解釋，就讓我們自行操作，大家都很不知所措的到處問可能有一點基礎的人，老師很積極的想讓我們知道這堂課要做甚麼這堂課在教什麼，即使您說的是中文也錄影給我們看了，但很多時候我們還是聽不懂老師上課的內容。但後來老師也放慢腳步讓我們更好的學習更好的知道這堂課在教什麼，希望以後可以在這堂課聽得懂老師所教的內容。</p>
+<h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
