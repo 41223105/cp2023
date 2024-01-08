@@ -745,25 +745,200 @@ int main() {
 <p><br/><img alt="" height="123" src="/images/截圖 2024-01-08 下午1.11.22.png" width="400"/></p>
 <p></p>
 <h2>4</h2>
-<p></p>
+<p><span>Write a C program to compute the perimeter and area of a rectangle with a height of 7 inches and width of 5 inches.</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; 
+//5
+/* 
+   Variables to store the width and height of a rectangle in inches 
+*/
+int width;          
+int height;         
+
+int area;           /* Variable to store the area of the rectangle */
+int perimeter;      /* Variable to store the perimeter of the rectangle */
+
+int main() {
+    /* Assigning values to height and width */
+  height = 7;
+  width = 5;
+
+    /* Calculating the perimeter of the rectangle */
+    perimeter = 2*(height + width);
+  printf("Perimeter of the rectangle = %d inches\n", perimeter);
+
+    /* Calculating the area of the rectangle */
+  area = height * width;
+  printf("Area of the rectangle = %d square inches\n", area);
+
+    return(0);
+}</pre>
+<p><img alt="" height="119" src="/images/截圖 2024-01-08 下午1.12.22.png" width="400"/></p>
+<ul class="w3r_list">
+<li>該程式包括標準輸入/輸出庫&lt;stdio.h&gt;。</li>
+<li>在“main()”函式中：</li>
+<ul class="w3r_list">
+<li>它將值7“高度”變數，將值5“寬度”變數，代表矩形的尺寸。</li>
+</ul>
+<li>程式計算矩形的周長和面積：</li>
+<ul class="w3r_list">
+<li>周長：它使用公式2 *（高度+寬度）來計算矩形的周長，並將結果儲存在“周長”變數中。</li>
+<li>面積：它使用公式高度*寬度計算面積，並將結果儲存在“面積”變數中。</li>
+</ul>
+<li>最後，程式使用“printf()”函式來顯示計算值：</li>
+<ul class="w3r_list">
+<li>它用一條訊息列印計算的周長：“矩形的周長=[周長]英寸。”</li>
+<li>它列印計算面積並顯示一條訊息：“矩形面積=[面積]平方英寸。”</li>
+</ul>
+<li>程式返回0以表示成功執行。</li>
+</ul>
 <p></p>
 <h2>5</h2>
-<p></p>
+<p><span>Write a C program to print a block F using the hash (#), where the F has a height of six characters and width of five and four characters. And also print a very large 'C'.</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+//3
+int main() 
+{
+    // Print top line of pattern
+    printf("    ######\n");
+
+    // Print second line of pattern
+    printf("  ##      ##\n");
+
+    // Print lines 3 to 7 of pattern
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+    printf(" #\n");
+
+    // Print bottom line of pattern
+    printf("  ##      ##\n");
+
+    // Print last line of pattern
+    printf("    ######\n");
+
+    return(0);
+}</pre>
+<p><br/><br/></p>
 <p></p>
 <h2>6</h2>
 <p></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+//26
+int main() {
+    int i; // Declare variable for loop counter
+
+    printf("Even numbers between 1 to 95613 (inclusive):\n");
+
+    for (i = 1; i &lt;= 95613; i++) 
+    {
+        if(i%2 == 0) // Check if 'i' is even
+        {
+            printf("%d ", i); // Print 'i' if it's even
+        }
+    }
+
+    return 0;
+}</pre>
+<p><br/><br/></p>
 <p></p>
 <h2>7</h2>
 <p></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+//65
+int main() {
+    int i, j, flag, ip = 0;
+
+    // Print a message indicating the purpose of the program
+    printf("The prime numbers between 1 and 640832 are:\n");
+
+    // Loop to check prime numbers from 2 to 198
+    for (i = 2; i &lt; 640832; i++) {
+        flag = 1;
+
+        // Loop to check if i is divisible by any number other than 1 and itself
+        for (j = 2; j &lt;= i / 2 &amp;&amp; flag == 1; j++) {
+            if (i % j == 0) {
+                flag = 0;
+            }
+        }
+
+        // If i is prime, print it
+        if (flag == 1) {
+            printf("%5d ", i);
+            ip++;
+
+            // Print a newline character after every 10 prime numbers
+            if (ip % 10 == 0) {
+                printf("\n");
+            }
+        }
+    }
+
+    printf("\n");
+
+    return 0;
+}</pre>
+<p><br/><br/></p>
 <p></p>
 <h2>8</h2>
 <p></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+//113
+int main ()
+{
+    int a, b;
+
+    // Loop to execute statements with changing values of 'a' and 'b'
+    for (a = 1, b = 100; a &lt;= 37, b &gt;= 0; a += 5, b -= 10)
+        printf("a=%d \t b=%d\n", a, b);
+}
+</pre>
+<p><br/><br/></p>
 <p></p>
 <h2>9</h2>
 <p></p>
 <p></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+//2
+int main(int argc, char** argv) {
+// Check for C standard version
+#if __STDC_VERSION__ &gt;= 201710L
+printf("We are using C18!\n");
+#elif __STDC_VERSION__ &gt;= 201112L
+printf("We are using C11!\n");
+#elif __STDC_VERSION__ &gt;= 199901L
+printf("We are using C99!\n");
+#else
+printf("We are using C89/C90!\n");
+#endif
+
+// Indicate successful execution
+return 0;
+}</pre>
+<p><br/><br/></p>
 <p></p>
 <h2>10</h2>
+<p></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#define N 10
+//70
+int main() {
+  char chr;
+  printf("\n");
+
+  // Loop through ASCII values from 65 ('A') to 122 ('z')
+  for (chr = 65; chr &lt;= 122; chr = chr + 1) {
+    // Exclude characters between 'Z' and 'a'
+    if (chr &gt; 90 &amp;&amp; chr &lt; 97)
+      continue;
+
+    printf("[%2d-%c] ", chr, chr);
+  }
+
+  return 0;
+}</pre>
+<p><br/><br/></p>
 <p></p>
 <h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
