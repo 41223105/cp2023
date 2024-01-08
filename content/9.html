@@ -162,7 +162,18 @@ printf("We are using C89/C90!\n");
 return 0;
 }</pre>
 <p><br/><img alt="" height="152" src="./../images/截圖 2024-01-08 下午1.22.39.png" width="400"/></p>
-<p></p>
+<ul class="w3r_list">
+<li>#include<stdio.h>：此行包括標準輸入輸出庫，這是使用“printf”所必需的。</stdio.h></li>
+<li>int main（int argc，char** argv）這是帶有命令行引數argc和argv的主要函式。 然而，在這個程式中，這些引數沒有被使用。</li>
+<li>該程式使用預處理器指令（#if、#elif、#else和#endif）根據編譯器檢測到的C標準版本有條件地編譯不同的列印語句：</li>
+<ul class="w3r_list">
+<li>#if __STDC_VERSION__ &gt;= 201710L檢查C標準版本是否大於或等於C18（2017）。 如果是真的，它會列印“我們正在使用C18！”。</li>
+<li>#elif __STDC_VERSION__ &gt;= 201112L檢查C標準版本是否大於或等於C11（2011）。 如果是真的，它會列印“我們正在使用C11！”。</li>
+<li>#elif __STDC_VERSION__ &gt;= 199901L 檢查C標準版本是否大於或等於C99（1999）。 如果是真的，它會列印“我們正在使用C99！”。</li>
+<li>#<span style="background-color: #ffff00;">else是一個回退條件</span>，如果上述條件都不滿足，就會觸發。 它列印“我們正在使用C89/C90！”。</li>
+</ul>
+<li>返回0此行表示主函式的結束，並返回0到作業系統，表示程式執行成功。</li>
+</ul>
 <br />8 << <a href='8.html'>Previous</a> <a href='10.html'>Next</a> >> 10</div>
         
     <!-- footer -->
