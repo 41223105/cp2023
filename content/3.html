@@ -143,9 +143,25 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">2 << <a href='2.html'>Previous</a> <a href='4.html'>Next</a> >> 4<br /><h1>3</h1>
-<p></p>
-<p></p>
-<br />2 << <a href='2.html'>Previous</a> <a href='4.html'>Next</a> >> 4</div>
+<p><span>Write a C program to calculate the value of S where S = 1 + 1/2 + 1/3 + … + 1/50</span></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main() {
+    float S = 0;
+    int i;
+
+    // Loop to calculate the sum
+    for(i=1; i&lt;=50; i++) {
+        S += (float)1/i;
+    }
+
+    // Print the result
+    printf("Value of S: %.2f\n", S);
+
+    return 0;
+}
+</pre>
+<p><br/><img alt="" height="123" src="./../images/截圖 2024-01-08 下午1.11.22.png" width="400"/></p>
+<p></p><br />2 << <a href='2.html'>Previous</a> <a href='4.html'>Next</a> >> 4</div>
         
     <!-- footer -->
       <div class="container">

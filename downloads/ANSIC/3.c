@@ -1,4 +1,5 @@
 #include <stdio.h>
+//45
 int main() {
     float S = 0;
     int i;
